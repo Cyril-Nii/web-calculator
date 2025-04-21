@@ -1,0 +1,208 @@
+/* Body and calculator wrapper */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #09203f, #537895);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Calculator container */
+#calculator {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #1c1c1c;
+    border-radius: 20px;
+    max-width: 350px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+#calculator h1 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 15px 0;
+    font-size: 1.5rem;
+}
+
+/* Display */
+#display {
+    width: 100%;
+    padding: 20px;
+    font-size: 2.5rem;
+    text-align: right;
+    border: none;
+    background-color: #2e2e2e;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Grid for keys */
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+    gap: 15px;
+}
+
+/* Base button styles */
+button {
+    height: 60px;
+    width: 100%;
+    border: none;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: #444;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Special button styles */
+.top {
+    background-color: #a5a5a5;
+    color: black;
+}
+
+.top:hover {
+    background-color: #bcbcbc;
+}
+
+.top:active {
+    background-color: #e0e0e0;
+}
+
+/* Operation buttons */
+.right {
+    background-color: #ff9500;
+    color: white;
+}
+
+.right:hover {
+    background-color: #e08600;
+}
+
+.right:active {
+    background-color: #cc7700;
+}
+
+/* Wide zero button */
+button.zero {
+    grid-column: span 2;
+    border-radius: 30px;
+}
+
+/* Toggle switch styling */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px 20px 0;
+    gap: 10px;
+    color: white;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px; width: 18px;
+    left: 4px; bottom: 3.5px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Light mode theme */
+.light-mode body {
+    background: linear-gradient(135deg, #ffffff, #d0e2f5);
+}
+
+.light-mode .toggle-container {
+    color: black;
+}
+
+.light-mode #calculator h1 {
+    color: black;
+}
+
+.light-mode #calculator {
+    background-color: #f2f2f2;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.light-mode #display {
+    background-color: #e0e0e0;
+    color: black;
+}
+
+.light-mode .top {
+    background-color: #d3d3d3;
+    color: black;
+}
+
+.light-mode .right {
+    background-color: #ff9500;
+    color: white;
+}
+
+.light-mode button {
+    background-color: #f0f0f0;
+    color: black;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+
+}
+
+.light-mode button:hover {
+    background-color: #ccc;
+}
+
+.light-mode .mode-label {
+    color: black;
+}
